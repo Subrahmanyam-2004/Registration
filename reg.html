@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+       padding: 25px;
+        background-image: url("photo.jpg");
+        background-repeat: no-repeat;
+        display: flex;
+       /*align-items: center;*/
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    .container {
+        width: 300px;
+      height: 450px;
+      padding-left: auto;
+      
+        
+        background-color:rgba(255, 255, 255, 0.4);
+        border: 2px ;
+  box-sizing:box;
+        padding: 50px;
+        border-radius: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    }
+    .password {
+        position: absolute;
+    }
+    form {
+        display:inline-block;
+        flex-direction:column;
+    }
+    
+    label {
+        margin-bottom: 8px;
+    }
+    
+    input {
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    button {
+        padding: 10px;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #b30000;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container">
+        <center><h1>User Registration</h1></center>
+        <form action="/regi" method="post" name="regPage">
+            <label for="Name">Name:</label>&ensp;&ensp;&ensp;&nbsp;&nbsp;
+            <input type="text" id="Name'" name="Name" required><br>
+            
+            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&ensp;&nbsp;&ensp;
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>&ensp;
+            <input type="password" id="password" name="password" required>
+            <span class="password-toggle-icon"><i class="fas fa-eye"></i></span><BR>
+            <label for="Mobile">Mobile No:</label>&ensp;
+            <input type="Mobile" id="Mobile" name="Mobile" required><br>
+
+            <h3>Internship interested in:</h3>
+            <input type="radio" name="internshipInterest" value="Data Engineer"> 
+            <label for="Data Engineer">Data Engineer</label>
+            <input type="radio"  name="internshipInterest" value="Data Analyst"> 
+            <label for="Data Analyst">Data Analyst</label><br>
+            <input type="radio" name="internshipInterest" value="Web Development">
+            <label for="Web Development"> Web Development</label>
+            <input type="radio" name="internshipInterest" value="Cyber Security"> 
+            <label for="Cyber Security">Cyber Security</label>
+<br><br>
+            <center><button type="submit">Register</button></center>
+        </form>
+    </div>
+    <script>
+        const passwordField = document.getElementById("password");
+        const togglePassword = document.querySelector(".password-toggle-icon i");
+
+        togglePassword.addEventListener("click", function () {
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            togglePassword.classList.remove("fa-eye");
+            togglePassword.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            togglePassword.classList.remove("fa-eye-slash");
+            togglePassword.classList.add("fa-eye");
+        }
+        });
+    </script>
+</body>
+</html>
